@@ -1,0 +1,12 @@
+setting:
+Namespace(batch_size=10, caseless=True, char_dim=30, char_hidden=300, char_layers=1, checkpoint='./checkpoint/ner_', clip_grad=5.0, co_train=True, dev_file='./data/ner/dev.txt', drop_out=0.55, emb_file='./embedding/glove.6B.100d.txt', epoch=200, eva_matrix='fa', fine_tune=False, gpu=0, high_way=True, highway_layers=1, lambda0=1, least_iters=100, load_check_point='', load_opt=False, lr=0.015, lr_decay=0.05, mini_count=5, momentum=0.9, patience=15, rand_embedding=False, shrink_embedding=False, small_crf=True, start_epoch=0, test_file='./data/ner/test.txt', train_file='./data/ner/train.txt', unk='unk', update='sgd', word_dim=100, word_hidden=300, word_layers=1)
+loading corpus
+constructing coding table
+feature size: '4915'
+loading embedding
+Traceback (most recent call last):
+  File "train_wc.py", line 115, in <module>
+    f_map, embedding_tensor, in_doc_words = utils.load_embedding_wlm(args.emb_file, ' ', f_map, dt_f_set, args.caseless, args.unk, args.word_dim, shrink_to_corpus=args.shrink_embedding)
+  File "/mnt/E/WORK/NER/LM-LSTM-CRF/model/utils.py", line 422, in load_embedding_wlm
+    for line in open(emb_file, 'r'):
+FileNotFoundError: [Errno 2] No such file or directory: './embedding/glove.6B.100d.txt'
